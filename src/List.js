@@ -1,7 +1,6 @@
 import React from 'react'
 
 const List = (props) => {
-   
 
     function handleClickDelete(){
         props.onDelete(props.id)
@@ -9,9 +8,13 @@ const List = (props) => {
     function handleClickEdit(){
         props.onEdit(props.id)
     }
+    function handleChecked(){
+        props.onCheck(props.id)
+    }
+
     return (
         <div className='list' data-aos="flip-up">
-            <input type="checkbox" />
+            <input type="checkbox" onClick={handleChecked} />
             <p>{props.item}</p>
             <div>
                 <i style={{ color: "#50c870", padding: "3px", cursor: "pointer" }} 
